@@ -1,5 +1,7 @@
 // File: src/pages/InquiryPage.jsx
 import React from 'react';
+import spotifyImg from '../assets/spotify.png';
+import { Linkedin, Github, Twitter, Mail, ArrowUpRight } from "lucide-react";
 
 
 const InquiryPage = () => (
@@ -29,28 +31,70 @@ const InquiryPage = () => (
 
 
 <div className="space-y-8">
-{[
-{ label: 'LINKEDIN', link: 'linkedin.com/in/username', icon: '↗' },
-{ label: 'GITHUB', link: 'github.com/username', icon: '↗' },
-{ label: 'TWITTER / X', link: 'twitter.com/username', icon: '↗' },
-{ label: 'EMAIL', link: 'hello@studio.com', icon: '✉' }
-].map((social, i) => (
-<a key={i} href={`#${social.label}`} className="group flex justify-between items-center border-b border-white/5 pb-6 hover:border-white transition-all duration-500">
-<div className="flex flex-col">
-<span className="text-[10px] text-zinc-600 font-bold tracking-[0.3em] mb-1">{social.label}</span>
-<span className="text-sm font-medium tracking-tight text-zinc-400 group-hover:text-white transition-colors">{social.link}</span>
-</div>
-<span className="text-xl text-zinc-700 group-hover:text-white transition-all transform group-hover:translate-x-1">{social.icon}</span>
-</a>
-))}
+  {[
+    {
+      label: "LINKEDIN",
+      link: "https://www.linkedin.com/in/dharmarajs001/",
+      text: "linkedin.com/in/Dharmaraj",
+      icon: <Linkedin size={18} />
+    },
+    {
+      label: "GITHUB",
+      link: "https://github.com/Dharmaraj001",
+      text: "github.com/Dharmarj",
+      icon: <Github size={18} />
+    },
+    {
+      label: "TWITTER / X",
+      link: "https://x.com/Dharmaraj_SS",
+      text: "x.com/Dharmaraj_SS",
+      icon: <Twitter size={18} />
+    },
+    {
+      label: "G-MAIL",
+      link: "mailto:dharmarajs877@gmail.com",
+      text: "dharmarajs877@gmail.com",
+      icon: <Mail size={18} />
+    }
+  ].map((social, i) => (
+    <a
+      key={i}
+      href={social.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex justify-between items-center border-b border-white/5 pb-6 hover:border-white transition-all duration-500"
+    >
+      <div className="flex flex-col">
+        <span className="text-[10px] text-zinc-600 font-bold tracking-[0.3em] mb-1">
+          {social.label}
+        </span>
+        <span className="text-sm font-medium tracking-tight text-zinc-400 group-hover:text-white transition-colors">
+          {social.text}
+        </span>
+      </div>
+
+      <div className="flex items-center gap-2 text-zinc-700 group-hover:text-white transition-all transform group-hover:translate-x-1">
+        {social.icon}
+        <ArrowUpRight size={16} />
+      </div>
+    </a>
+  ))}
 </div>
 
 
 <div className="pt-4">
-<p className="text-[10px] text-zinc-700 uppercase tracking-[0.4em] mb-4">Current Availability</p>
+<p className="flex items-center gap-3 text-[10px] text-zinc-400 uppercase tracking-[0.4em] mb-4">
+  Last Played on
+  <img
+    src={spotifyImg}
+    alt="Spotify"
+    className="h-4 w-4 object-contain opacity-80"
+  />
+</p>
+
 <div className="inline-flex items-center gap-3 px-4 py-2 border border-zinc-800 rounded-full">
-<div className="w-1.5 h-1.5 bg-zinc-400 rounded-full animate-pulse" />
-<span className="text-[11px] font-bold text-zinc-300">Accepting Projects Q1 2026</span>
+<div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+<span className="text-[11px] font-bold text-zinc-300"></span>
 </div>
 </div>
 </div>

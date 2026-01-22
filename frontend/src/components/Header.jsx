@@ -24,10 +24,10 @@ return (
 <header className="
   fixed top-10 left-0 right-0
   z-[80]
-  bg-black
+  bg-[#050505]
   p-8
   flex justify-between items-center
-  max-w-7xl mx-auto
+  max-w-full mx-auto
 ">
 
 <div onClick={() => { setCurrentPage('home'); setIsMobileMenuOpen(false); }} className="text-xl font-bold tracking-tighter cursor-pointer">STUDIO.</div>
@@ -35,7 +35,7 @@ return (
 
 <div className="hidden md:flex gap-12 text-[12px] uppercase tracking-[0.3em] text-zinc-600 font-bold">
 {navLinks.map(link => (
-<button key={link.id} onClick={() => setCurrentPage(link.id)} className={`hover:text-white transition ${currentPage === link.id ? 'text-white' : ''}`}>
+<button key={link.id} onClick={() => setCurrentPage(link.id)} className={`hover:text-white transition cursor-pointer ${currentPage === link.id ? 'text-white' : ''}`}>
 {link.label}
 </button>
 ))}
@@ -49,7 +49,7 @@ return (
 </button>
 
 
-<button onClick={() => setCurrentPage('inquiry')} className="hidden md:block bg-white text-black px-8 py-3 rounded-full text-xs font-bold hover:scale-105 transition-transform">Inquiry</button>
+<button onClick={() => setCurrentPage('inquiry')} className="hidden md:block bg-white text-black px-8 py-3 rounded-full text-xs font-bold hover:scale-105 transition-transform cursor-pointer">Inquiry</button>
 </header>
 </>
 );
