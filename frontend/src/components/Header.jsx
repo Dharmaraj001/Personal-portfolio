@@ -30,7 +30,7 @@ return (
   max-w-full mx-auto
 ">
 
-<div onClick={() => { setCurrentPage('home'); setIsMobileMenuOpen(false); }} className="text-xl font-bold tracking-tighter cursor-pointer">STUDIO.</div>
+<div onClick={() => { setCurrentPage('home'); setIsMobileMenuOpen(false); }} className="ml-[40px] text-xl font-bold tracking-tighter cursor-pointer">STUDIO.</div>
 
 
 <div className="hidden md:flex gap-12 text-[12px] uppercase tracking-[0.3em] text-zinc-600 font-bold">
@@ -49,7 +49,7 @@ return (
 </button>
 
 
-<button onClick={() => setCurrentPage('inquiry')} className="hidden md:block bg-white text-black px-8 py-3 rounded-full text-xs font-bold hover:scale-105 transition-transform cursor-pointer">Inquiry</button>
+<button onClick={() => setCurrentPage('inquiry')} className=" hidden md:block bg-white text-black px-8 py-3 rounded-full text-xs font-bold hover:scale-105 transition-transform cursor-pointer">Inquiry</button>
 </header>
 </>
 );
