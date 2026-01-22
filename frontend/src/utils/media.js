@@ -1,0 +1,1 @@
+export const isVideo = (path) => !!path?.match(/\.(mp4|webm|ogg)$/i);
