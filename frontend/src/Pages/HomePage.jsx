@@ -14,7 +14,7 @@ FULL STACK<br />
 </h1>
 </div>
 <p className="text-xl text-zinc-600 max-w-md leading-relaxed reveal reveal-up delay-[200ms]">
-I build immersive digital interfaces that bridge the gap between complex logic and human emotion.
+“I build scalable full-stack web apps with clean UI and solid backend logic.”
 </p>
 <div className="flex flex-wrap gap-10 reveal reveal-up delay-[300ms]">
 <div className="group cursor-pointer">

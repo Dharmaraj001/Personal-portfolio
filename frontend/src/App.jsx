@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import HomePage from './Pages/HomePage';
 import WorkPage from './Pages/WorkPage';
-import ApproachPage from './Pages/ApproachPage';
 import SkillsPage from './Pages/SkillsPage';
 import InquiryPage from './Pages/InquiryPage';
 import Loader from './components/Loader';
@@ -55,7 +54,6 @@ return () => observer.disconnect();
 const renderPage = () => {
 switch (currentPage) {
 case 'work': return <WorkPage />;
-case 'approach': return <ApproachPage />;
 case 'skills': return <SkillsPage />;
 case 'inquiry': return <InquiryPage />;
 default: return <HomePage currentProject={currentProject} />;
@@ -74,7 +72,7 @@ return (
 {['work','approach','skills'].map((id) => (
 <button key={id} onClick={() => { setCurrentPage(id); setIsMobileMenuOpen(false); }} className="text-4xl font-bold tracking-tighter uppercase hover:text-zinc-700 transition">{id}</button>
 ))}
-<button onClick={() => { setCurrentPage('inquiry'); setIsMobileMenuOpen(false); }} className="mt-4 bg-white text-black px-12 py-4 rounded-full text-sm font-bold uppercase tracking-widest">Inquiry</button>
+<button onClick={() => { setCurrentPage('inquiry'); setIsMobileMenuOpen(false); }} className="mt-4 bg-white text-black px-12 py-4 rounded-full text-sm font-bold uppercase tracking-widest">Hire Me</button>
 </div>
 </div>
 
@@ -90,15 +88,29 @@ return (
 
 
 {currentPage === 'home' && (
-<section className="max-w-7xl mx-auto px-8 py-40 border-t border-white/[0.03] grid grid-cols-2 md:grid-cols-4 gap-12">
-{[{ val: '02+', label: 'Years Mastery' },{ val: '15+', label: 'Deployments' },{ val: '05+', label: 'Projects' },{ val: '01', label: 'Unique Vision' }].map((stat, i) => (
-<div key={i} className="reveal reveal-up" style={{ transitionDelay: `${i * 100}ms` }}>
-<div className="text-5xl font-extrabold mb-2 tracking-tighter text-zinc-200">{stat.val}</div>
-<div className="text-[10px] uppercase tracking-[0.3em] text-zinc-700">{stat.label}</div>
-</div>
-))}
-</section>
+  <section className="max-w-7xl mx-auto px-8 py-40 border-t border-white/[0.03] grid grid-cols-2 md:grid-cols-4 gap-12">
+    {[
+      { val: '02+', label: 'Years Experience' },
+      { val: '10+', label: 'Live Deployments' },
+      { val: '05+', label: 'Real-World Projects' },
+      { val: '150+', label: 'DSA Problems Solved' },
+    ].map((stat, i) => (
+      <div
+        key={i}
+        className="reveal reveal-up"
+        style={{ transitionDelay: `${i * 100}ms` }}
+      >
+        <div className="text-5xl font-extrabold mb-2 tracking-tighter text-zinc-200">
+          {stat.val}
+        </div>
+        <div className="text-[10px] uppercase tracking-[0.3em] text-zinc-700 hover:text-white/90">
+          {stat.label}
+        </div>
+      </div>
+    ))}
+  </section>
 )}
+
 </main>
 
 <style dangerouslySetInnerHTML={{ __html: `
