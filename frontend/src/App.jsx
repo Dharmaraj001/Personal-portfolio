@@ -72,7 +72,7 @@ return (
 {['work','approach','skills'].map((id) => (
 <button key={id} onClick={() => { setCurrentPage(id); setIsMobileMenuOpen(false); }} className="text-4xl font-bold tracking-tighter uppercase hover:text-zinc-700 transition">{id}</button>
 ))}
-<button onClick={() => { setCurrentPage('inquiry'); setIsMobileMenuOpen(false); }} className="mt-4 bg-white text-black px-12 py-4 rounded-full text-sm font-bold uppercase tracking-widest">Hire Me</button>
+<button onClick={() => { setCurrentPage('inquiry'); setIsMobileMenuOpen(false); }} className="mt-4 bg-white text-black px-12 py-4 rounded-full text-sm font-bold uppercase tracking-widest">CONTACT</button>
 </div>
 </div>
 
@@ -90,7 +90,7 @@ return (
 {currentPage === 'home' && (
   <section className="max-w-7xl mx-auto px-8 py-40 border-t border-white/[0.03] grid grid-cols-2 md:grid-cols-4 gap-12">
     {[
-      { val: '02+', label: 'Years Experience' },
+      { val: '01+', label: 'Years Experience' },
       { val: '10+', label: 'Live Deployments' },
       { val: '05+', label: 'Real-World Projects' },
       { val: '150+', label: 'DSA Problems Solved' },
