@@ -53,7 +53,7 @@ return () => observer.disconnect();
 
 const renderPage = () => {
 switch (currentPage) {
-case 'work': return <WorkPage />;
+case 'PROJECTS': return <WorkPage />;
 case 'skills': return <SkillsPage />;
 case 'inquiry': return <InquiryPage />;
 default: return <HomePage currentProject={currentProject} />;
@@ -67,14 +67,58 @@ return (
 
 
 {/* MOBILE MENU OVERLAY */}
-<div className={`fixed inset-0 bg-black z-[65] flex flex-col items-center justify-center transition-transform duration-700 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-<div className="flex flex-col gap-8 text-center">
-{['work','approach','skills'].map((id) => (
-<button key={id} onClick={() => { setCurrentPage(id); setIsMobileMenuOpen(false); }} className="text-4xl font-bold tracking-tighter uppercase hover:text-zinc-700 transition">{id}</button>
-))}
-<button onClick={() => { setCurrentPage('inquiry'); setIsMobileMenuOpen(false); }} className="mt-4 bg-white text-black px-12 py-4 rounded-full text-sm font-bold uppercase tracking-widest">CONTACT</button>
+<div
+  className={`fixed inset-0 bg-black z-[65] flex flex-col items-center justify-center transition-transform duration-700 ${
+    isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+  }`}
+>
+  <div className="flex flex-col gap-8 text-center">
+
+    {/* Projects */}
+    <button
+      onClick={() => {
+        setCurrentPage('PROJECTS');
+        setIsMobileMenuOpen(false);
+      }}
+      className="text-4xl font-bold tracking-tighter uppercase hover:text-zinc-700 transition"
+    >
+      PROJECTS
+    </button>
+
+    {/* Skills */}
+    <button
+      onClick={() => {
+        setCurrentPage('skills');
+        setIsMobileMenuOpen(false);
+      }}
+      className="text-4xl font-bold tracking-tighter uppercase hover:text-zinc-700 transition"
+    >
+      SKILLS
+    </button>
+
+    {/* Resume download */}
+    <a
+      href="/full stack resume intern.pdf"
+      download
+      onClick={() => setIsMobileMenuOpen(false)}
+      className="text-4xl font-bold tracking-tighter uppercase hover:text-zinc-700 transition"
+    >
+      RESUME
+    </a>
+
+    {/* Contact */}
+    <button
+      onClick={() => {
+        setCurrentPage('inquiry');
+        setIsMobileMenuOpen(false);
+      }}
+      className="mt-4 bg-white text-black px-12 py-4 rounded-full text-sm font-bold uppercase tracking-widest"
+    >
+      CONTACT
+    </button>
+  </div>
 </div>
-</div>
+
 
 {/* BACKGROUND DECOR */}
 <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
