@@ -53,7 +53,7 @@ return () => observer.disconnect();
 
 const renderPage = () => {
 switch (currentPage) {
-case 'PROJECTS': return <WorkPage />;
+case 'work': return <WorkPage />;
 case 'skills': return <SkillsPage />;
 case 'inquiry': return <InquiryPage />;
 default: return <HomePage currentProject={currentProject} />;
@@ -77,7 +77,7 @@ return (
     {/* Projects */}
     <button
       onClick={() => {
-        setCurrentPage('PROJECTS');
+        setCurrentPage('work');
         setIsMobileMenuOpen(false);
       }}
       className="text-4xl font-bold tracking-tighter uppercase hover:text-zinc-700 transition"
@@ -98,7 +98,7 @@ return (
 
     {/* Resume download */}
     <a
-      href="/full stack resume intern.pdf"
+      href="/ full stack resume intern.pdf"
       download
       onClick={() => setIsMobileMenuOpen(false)}
       className="text-4xl font-bold tracking-tighter uppercase hover:text-zinc-700 transition"

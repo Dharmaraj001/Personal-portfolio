@@ -33,7 +33,7 @@ const Header = ({
           }}
           className="ml-[40px] text-xl font-bold tracking-tighter cursor-pointer"
         >
-          DHARMARAJ
+          Home
         </div>
 
         {/* Desktop Navigation */}

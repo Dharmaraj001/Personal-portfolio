@@ -26,7 +26,7 @@ const InquiryPage = () => (
 <div className="space-y-12 reveal reveal-right">
 <div>
 <h2 className="text-5xl font-extrabold tracking-tighter mb-6">LET'S CONNECT.</h2>
-<p className="text-zinc-500 text-lg leading-relaxed">I am always open to discussing high-impact engineering roles, architecture consultations, or innovative full-stack projects.</p>
+<p className="text-zinc-500 text-lg leading-relaxed">I’m open to internship and entry-level software development opportunities, collaborative projects, and discussions around development and problem-solving.</p>
 </div>
 
 
@@ -68,12 +68,12 @@ const InquiryPage = () => (
         <span className="text-[10px] text-zinc-600 font-bold tracking-[0.3em] mb-1">
           {social.label}
         </span>
-        <span className="text-sm font-medium tracking-tight text-zinc-400 group-hover:text-white transition-colors">
+        <span className="text-sm font-medium tracking-tight text-zinc-400 group-hover:text-blue-400 transition-colors">
           {social.text}
         </span>
       </div>
 
-      <div className="flex items-center gap-2 text-zinc-700 group-hover:text-white transition-all transform group-hover:translate-x-1">
+      <div className="flex items-center gap-2 text-zinc-700 group-hover:text-blue-400 transition-all transform group-hover:translate-x-1">
         {social.icon}
         <ArrowUpRight size={16} />
       </div>
