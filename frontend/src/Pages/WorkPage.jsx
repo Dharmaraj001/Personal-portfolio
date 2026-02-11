@@ -11,9 +11,8 @@ const WorkPage = () => (
 <div className="grid md:grid-cols-2 gap-12">
 {[
 { name: 'Brain-Box', type: 'AI Integration', year: '2025' },
-{ name: 'Cyber-Vault', type: 'Security System', year: '2024' },
-{ name: 'Sync-Stream', type: 'Live Backend', year: '2024' },
-{ name: 'Meta-Core', type: 'Cloud Infrastructure', year: '2023' }
+{ name: 'Fair-Fix', type: 'Security System', year: '2026' },
+{ name: 'Spotify-Clone', type: 'Live Backend', year: '2024' },
 ].map((project, i) => (
 <div key={i} className="group cursor-pointer reveal reveal-up" style={{ transitionDelay: `${i * 100}ms` }}>
 <div className="aspect-video bg-zinc-900/50 rounded-2xl border border-white/5 mb-6 overflow-hidden relative">
