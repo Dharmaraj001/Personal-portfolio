@@ -2,6 +2,17 @@
 import React from 'react';
 import spotifyImg from '../assets/spotify.png';
 import { Linkedin, Github, Twitter, Mail, ArrowUpRight } from "lucide-react";
+import React, { useEffect, useState } from "react";
+
+const [song, setSong] = useState(null);
+
+useEffect(() => {
+  fetch("/api/spotify")
+    .then(res => res.json())
+    .then(data => setSong(data))
+    .catch(err => console.error("Spotify error:", err));
+}, []);
+
 
 
 const InquiryPage = () => (
@@ -94,7 +105,21 @@ const InquiryPage = () => (
 
 <div className="inline-flex items-center gap-3 px-4 py-2 border border-zinc-800 rounded-full">
 <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
-<span className="text-[11px] font-bold text-zinc-300"></span>
+{song ? (
+  <a
+    href={song.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-[11px] font-bold text-zinc-300 hover:text-green-400 transition"
+  >
+    {song.title} — {song.artist}
+  </a>
+) : (
+  <span className="text-[11px] font-bold text-zinc-500">
+    Loading...
+  </span>
+)}
+
 </div>
 </div>
 </div>
