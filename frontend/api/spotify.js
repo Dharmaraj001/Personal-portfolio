@@ -8,11 +8,9 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: "Missing environment variables" });
     }
 
-    const basic = Buffer.from(
-      client_id + ":" + client_secret
-    ).toString("base64");
+    // Proper Base64 encoding
+    const basic = btoa(`${client_id}:${client_secret}`);
 
-    // Step 1: Get Access Token
     const tokenResponse = await fetch(
       "https://accounts.spotify.com/api/token",
       {
@@ -23,20 +21,29 @@ export default async function handler(req, res) {
         },
         body: new URLSearchParams({
           grant_type: "refresh_token",
-          refresh_token: refresh_token,
+          refresh_token,
         }),
       }
     );
 
-    const tokenData = await tokenResponse.json();
+    const tokenText = await tokenResponse.text();
+
+    let tokenData;
+    try {
+      tokenData = JSON.parse(tokenText);
+    } catch {
+      return res.status(500).json({
+        error: "Spotify token response not JSON",
+        raw: tokenText,
+      });
+    }
 
     if (!tokenData.access_token) {
-      return res.status(500).json({ error: tokenData });
+      return res.status(500).json(tokenData);
     }
 
     const access_token = tokenData.access_token;
 
-    // Step 2: Get Recently Played
     const spotifyResponse = await fetch(
       "https://api.spotify.com/v1/me/player/recently-played?limit=1",
       {
@@ -49,7 +56,7 @@ export default async function handler(req, res) {
     const spotifyData = await spotifyResponse.json();
 
     if (!spotifyData.items || spotifyData.items.length === 0) {
-      return res.status(200).json({ message: "No recently played tracks" });
+      return res.status(200).json({ title: null });
     }
 
     const track = spotifyData.items[0].track;
