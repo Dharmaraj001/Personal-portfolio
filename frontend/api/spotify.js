@@ -1,6 +1,6 @@
-const axios = require("axios");
+import axios from "axios";
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   try {
     const client_id = process.env.4b2729a2595645a0ba7e4b3c8c25c1a5;
     const client_secret = process.env.dd953ad562684e88b3ff5cf40d75fac1;
@@ -18,7 +18,7 @@ module.exports = async function handler(req, res) {
       "https://accounts.spotify.com/api/token",
       new URLSearchParams({
         grant_type: "refresh_token",
-        refresh_token,
+        refresh_token: refresh_token,
       }),
       {
         headers: {
@@ -39,6 +39,10 @@ module.exports = async function handler(req, res) {
       }
     );
 
+    if (!spotifyResponse.data.items.length) {
+      return res.status(200).json({ message: "No recently played tracks" });
+    }
+
     const track = spotifyResponse.data.items[0].track;
 
     return res.status(200).json({
@@ -53,4 +57,4 @@ module.exports = async function handler(req, res) {
       error: error.response?.data || error.message,
     });
   }
-};
+}
