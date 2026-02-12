@@ -103,7 +103,7 @@ return (
 
 <div className="inline-flex items-center gap-3 px-4 py-2 border border-zinc-800 rounded-full">
 <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
-{song ? (
+{song && song.title ? (
   <a
     href={song.url}
     target="_blank"
@@ -114,9 +114,10 @@ return (
   </a>
 ) : (
   <span className="text-[11px] font-bold text-zinc-500">
-    Loading...
+    Not playing anything
   </span>
 )}
+
 
 </div>
 </div>
