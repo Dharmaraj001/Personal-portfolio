@@ -1,21 +1,19 @@
-// File: src/pages/InquiryPage.jsx
-import React from 'react';
+import { useEffect, useState } from "react";
 import spotifyImg from '../assets/spotify.png';
 import { Linkedin, Github, Twitter, Mail, ArrowUpRight } from "lucide-react";
-import React, { useEffect, useState } from "react";
-
-const [song, setSong] = useState(null);
-
-useEffect(() => {
-  fetch("/api/spotify")
-    .then(res => res.json())
-    .then(data => setSong(data))
-    .catch(err => console.error("Spotify error:", err));
-}, []);
 
 
+const InquiryPage = () => {
+  const [song, setSong] = useState(null);
 
-const InquiryPage = () => (
+  useEffect(() => {
+    fetch("/api/spotify")
+      .then(res => res.json())
+      .then(data => setSong(data))
+      .catch(err => console.error("Spotify error:", err));
+  }, []); 
+
+return (
 <section className="max-w-7xl mx-auto px-8 py-32">
 <div className="grid lg:grid-cols-2 gap-20 items-center">
 <div className="reveal reveal-left">
@@ -126,6 +124,7 @@ const InquiryPage = () => (
 </div>
 </section>
 );
+};
 
 
 export default InquiryPage;
