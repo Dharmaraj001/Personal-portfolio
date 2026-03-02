@@ -40,7 +40,7 @@ const SkillsPage = () => (
         },
         {
           category: 'DevOps & Tools',
-          skills: ['Git & GitHub', 'Postman', 'Vercel'],
+          skills: ['Git & GitHub', 'Postman', 'Vercel', 'Render', 'Material UI'], 
         },
       ].map((group, i) => (
         <div

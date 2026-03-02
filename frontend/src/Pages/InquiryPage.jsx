@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import spotifyImg from '../assets/spotify.png';
+import spotifyImg1 from '../assets/spotify1.png';
 import { Linkedin, Github, Twitter, Mail, ArrowUpRight } from "lucide-react";
 
 
@@ -92,10 +92,10 @@ return (
 
 
 <div className="pt-4">
-<p className="flex items-center gap-3 text-[10px] text-zinc-400 uppercase tracking-[0.4em] mb-4">
+<p className="flex items-center gap-3 text-[10px] text-zinc-200 uppercase tracking-[0.4em] mb-4">
   Last Played on
   <img
-    src={spotifyImg}
+    src={spotifyImg1}
     alt="Spotify"
     className="h-4 w-4 object-contain opacity-80"
   />
