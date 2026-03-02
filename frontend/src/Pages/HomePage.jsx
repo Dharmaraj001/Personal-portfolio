@@ -25,7 +25,7 @@ const HomePage = ({ currentProject }) => (
             <p className="text-[10px] uppercase tracking-widest text-zinc-700 mb-2">
               Featured Project
             </p>
-            <a href="https://google.com" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold inline-flex items-center gap-1 transition-transform hover:translate-x-2 hover:text-blue-500 hover:underline">
+            <a href="https://lms-seven-lemon.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold inline-flex items-center gap-1 transition-transform hover:translate-x-2 hover:text-blue-500 hover:underline">
             {currentProject.name} {currentProject.year} →
             </a>
           </div>
