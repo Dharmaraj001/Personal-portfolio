@@ -3,7 +3,7 @@ import React from 'react';
 
 
 const SkillsPage = () => (
-  <section className="max-w-7xl mx-auto px-8 py-32">
+  <section className="max-w-7xl mx-auto px-50 py-32">
     {/* HEADER */}
     <div className="mb-20">
       <h2 className="text-5xl font-extrabold tracking-tighter mb-4 reveal reveal-up">

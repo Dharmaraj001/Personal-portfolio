@@ -3,7 +3,7 @@ import React from 'react';
 import { isVideo } from '../utils/media';
 
 const HomePage = ({ currentProject }) => (
-  <section className="max-w-7xl mx-auto px-8 py-20 md:py-32">
+  <section className="max-w-7xl mx-auto px-22 py-20 md:py-32">
     <div className="grid lg:grid-cols-2 items-center gap-20">
 
       {/* LEFT CONTENT */}
