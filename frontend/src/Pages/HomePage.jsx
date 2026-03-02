@@ -10,12 +10,12 @@ const HomePage = ({ currentProject }) => (
       <div className="space-y-10">
         <div>
           <h1 className="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] reveal reveal-up delay-[100ms]">
-            Dharmaraj’s<br />
-            <span className="text-zinc-800">Portfolio.</span>
+            Hi, I'm<br />
+            <span className="text-zinc-300">Dharmaraj</span>
           </h1>
         </div>
 
-        <p className="text-xl text-zinc-600 max-w-md leading-relaxed reveal reveal-up delay-[200ms]">
+        <p className="text-xl text-zinc-400 max-w-md leading-relaxed reveal reveal-up delay-[200ms]">
           “Passionate Coder | Web Developer | Aspiring Software Engineer”
         </p>
 

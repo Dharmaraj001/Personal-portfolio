@@ -16,15 +16,22 @@ const Header = ({
   return (
     <>
       <header
-        className="
-          fixed top-0 left-0 right-0
-          z-[80]
-          bg-[#050505]
-          p-11
-          flex justify-between items-center
-          max-w-full mx-auto
-        "
-      >
+  className="
+    fixed top-0 left-0 right-0
+    z-[80]
+    bg-[#050505]
+    w-full
+  "
+>
+  <div
+    className="
+      max-w-7xl
+      ml-15 mr-25
+      px-18 
+      py-8
+      flex justify-between items-center
+    "
+  >
         {/* Logo / Name */}
         <div
           onClick={() => {
@@ -92,6 +99,7 @@ const Header = ({
         >
           CONTACT
         </button>
+        </div>
       </header>
 
       {/* Mobile Menu */}

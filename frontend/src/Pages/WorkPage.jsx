@@ -16,8 +16,8 @@ type: 'LMS Platform',
 year: '2025',
 image: brainboxImg,
 description: 'Full stack LMS with authentication, course management and progress tracking.',
-live: '#',
-github: '#',
+live: 'https://lms-seven-lemon.vercel.app/',
+github: 'https://github.com/Dharmaraj001/lms',
 status: 'All Systems Operational'
 },
 {
@@ -26,8 +26,8 @@ type: 'Security System',
 year: '2026',
 image: fairfixImg,
 description: 'AI powered security monitoring with real-time threat detection.',
-live: '#',
-github: '#',
+live: 'https://fair-fix.vercel.app/',
+github: 'https://github.com/Dharmaraj001/FairFix',
 status: 'Running'
 },
 {
@@ -36,8 +36,8 @@ type: 'Live Backend',
 year: '2024',
 image: spotifyImg,
 description: 'Generates random passoword of required length if want includes characters and symbols.',
-live: '#',
-github: '#',
+live: 'https://password-generator-virid-kappa-66.vercel.app/',
+github: 'https://github.com/Dharmaraj001/Password_Generator',
 status: 'Completed'
 },
 {
@@ -46,8 +46,8 @@ type: 'API Integration',
 year: '2025',
 image: weatherImg,
 description: 'Real-time weather app using external API integration.',
-live: '#',
-github: '#',
+live: 'https://weather-widget-ten-chi.vercel.app/',
+github: 'https://github.com/Dharmaraj001/Weather_widget',
 status: 'Completed'
 }
 ];
