@@ -1,51 +1,65 @@
 // File: src/pages/SkillsPage.jsx
-import React from 'react';
 
+import React from "react";
 
 const SkillsPage = () => (
-  <section className="max-w-7xl mx-auto px-50 py-32">
+  <section className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 xl:px-28 2xl:px-40 py-20 sm:py-24 lg:py-32">
     {/* HEADER */}
-    <div className="mb-20">
-      <h2 className="text-5xl font-extrabold tracking-tighter mb-4 reveal reveal-up">
+    <div className="mb-16 sm:mb-20 text-center">
+      <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tighter mb-4 reveal reveal-up">
         TECHNICAL SKILLS
       </h2>
-      <p className="text-zinc-600 uppercase tracking-widest text-xs reveal reveal-up">
+
+      <p className="text-zinc-600 uppercase tracking-widest text-[10px] sm:text-xs reveal reveal-up">
         Currently learning and applying
       </p>
     </div>
 
     {/* SKILLS GRID */}
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-16">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 justify-items-center">
       {[
         {
-          category: 'Frontend',
-          skills: ['HTML5', 'CSS3', 'JavaScript', 'React', 'Tailwind CSS', 'Bootstrap'],
-        },
-        {
-          category: 'Backend',
-          skills: ['Node.js', 'Express.js'],
-        },
-        {
-          category: 'Database',
-          skills: ['MongoDB', 'SQL (Basic)'],
-        },
-        {
-          category: 'Programming & CS',
+          category: "Frontend",
           skills: [
-            'Java',
-            'Data Structures & Algorithms',
-            'Object-Oriented Programming',
-            'Computer Networks (Basics)',
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+            "React",
+            "Tailwind CSS",
+            "Bootstrap",
           ],
         },
         {
-          category: 'DevOps & Tools',
-          skills: ['Git & GitHub', 'Postman', 'Vercel', 'Render', 'Material UI'], 
+          category: "Backend",
+          skills: ["Node.js", "Express.js"],
+        },
+        {
+          category: "Database",
+          skills: ["MongoDB", "SQL (Basic)"],
+        },
+        {
+          category: "Programming & CS",
+          skills: [
+            "Java",
+            "Data Structures & Algorithms",
+            "Object-Oriented Programming",
+            "Computer Networks (Basics)",
+          ],
+        },
+        {
+          category: "DevOps & Tools",
+          skills: [
+            "Git & GitHub",
+            "Postman",
+            "Vercel",
+            "Render",
+            "Material UI",
+          ],
         },
       ].map((group, i) => (
         <div
           key={group.category}
-          className="reveal reveal-up"
+          className="reveal reveal-up w-full max-w-sm"
           style={{ transitionDelay: `${i * 100}ms` }}
         >
           <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-[0.3em] mb-6">
@@ -56,8 +70,7 @@ const SkillsPage = () => (
             {group.skills.map((skill) => (
               <li
                 key={skill}
-                className="text-lg font-medium border-l border-white/5 pl-4
-                           hover:border-white transition-colors"
+                className="text-lg font-medium border-l border-white/5 pl-4 hover:border-white transition-colors duration-300"
               >
                 {skill}
               </li>
@@ -68,7 +81,5 @@ const SkillsPage = () => (
     </div>
   </section>
 );
-
-
 
 export default SkillsPage;
