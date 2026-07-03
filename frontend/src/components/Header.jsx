@@ -59,12 +59,13 @@ const Header = ({
 
           {/* Resume Download */}
           <a
-            href="/full stack resume intern.pdf"
-            download
+            href="https://drive.google.com/file/d/19uK_1ZXT_LHe-eMfP7ayDLr0zA89N5ip/preview"
+            // target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-white transition cursor-pointer"
-          >
-            RESUME
-          </a>
+            >
+              RESUME
+            </a>
         </div>
 
         {/* Mobile Menu Button */}
