@@ -1,146 +1,107 @@
 // File: src/components/Header.jsx
-import React from 'react';
+
+import React from "react";
 
 const Header = ({
   currentPage,
   setCurrentPage,
   isMobileMenuOpen,
-  setIsMobileMenuOpen
+  setIsMobileMenuOpen,
 }) => {
-
   const navLinks = [
-    { id: 'work', label: 'PROJECTS' },
-    { id: 'skills', label: 'SKILLS' }
+    { id: "work", label: "PROJECTS" },
+    { id: "skills", label: "SKILLS" },
   ];
 
   return (
-    <>
-      <header
-  className="
-    fixed top-0 left-0 right-0
-    z-[80]
-    bg-[#050505]
-    w-full
-  "
->
-  <div
-    className="
-      max-w-7xl
-      ml-15 mr-25
-      px-18 
-      py-8
-      flex justify-between items-center
-    "
-  >
-        {/* Logo / Name */}
-        <div
+    <header className="fixed top-0 left-0 right-0 z-[80] bg-[#050505]/90 backdrop-blur-md border-b border-white/5">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 h-20 flex items-center justify-between">
+
+        {/* Logo */}
+        <button
           onClick={() => {
-            setCurrentPage('home');
+            setCurrentPage("home");
             setIsMobileMenuOpen(false);
           }}
-          className="ml-[40px] text-xl font-bold tracking-tighter cursor-pointer"
+          className="text-lg sm:text-xl font-bold tracking-tight cursor-pointer hover:text-zinc-300 transition"
         >
           Home
-        </div>
+        </button>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-12 text-[12px] uppercase tracking-[0.3em] text-zinc-600 font-bold">
-          {navLinks.map(link => (
+        <nav className="hidden md:flex items-center gap-8 lg:gap-12 text-[11px] lg:text-xs uppercase tracking-[0.25em] text-zinc-500 font-semibold">
+
+          {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => setCurrentPage(link.id)}
-              className={`hover:text-white transition cursor-pointer ${
-                currentPage === link.id ? 'text-white' : ''
+              className={`transition hover:text-white ${
+                currentPage === link.id
+                  ? "text-white"
+                  : "text-zinc-500"
               }`}
             >
               {link.label}
             </button>
           ))}
 
-          {/* Resume Download */}
           <a
             href="https://drive.google.com/file/d/19uK_1ZXT_LHe-eMfP7ayDLr0zA89N5ip/preview"
-            // target="_blank"
+            target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white transition cursor-pointer"
-            >
-              RESUME
-            </a>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden flex flex-col gap-1.5 z-[70]"
-        >
-          <span
-            className={`w-6 h-[2px] bg-white transition-transform ${
-              isMobileMenuOpen ? 'rotate-45 translate-y-[8px]' : ''
-            }`}
-          />
-          <span
-            className={`w-6 h-[2px] bg-white transition-opacity ${
-              isMobileMenuOpen ? 'opacity-0' : ''
-            }`}
-          />
-          <span
-            className={`w-6 h-[2px] bg-white transition-transform ${
-              isMobileMenuOpen ? '-rotate-45 -translate-y-[8px]' : ''
-            }`}
-          />
-        </button>
-
-        {/* Contact Button */}
-        <button
-          onClick={() => {
-            setCurrentPage('inquiry');
-            setIsMobileMenuOpen(false);
-          }}
-          className="hidden md:block bg-white text-black px-8 py-3 rounded-full text-xs font-bold hover:scale-105 transition-transform cursor-pointer"
-        >
-          CONTACT
-        </button>
-        </div>
-      </header>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-[#050505] z-[60] flex flex-col items-center justify-center gap-8 text-lg uppercase tracking-widest">
-          {navLinks.map(link => (
-            <button
-              key={link.id}
-              onClick={() => {
-                setCurrentPage(link.id);
-                setIsMobileMenuOpen(false);
-              }}
-              className="text-white"
-            >
-              {link.label}
-            </button>
-          ))}
-
-          {/* Mobile Resume Download */}
-          <a
-            href="/full stack resume intern.pdf"
-            download
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="text-white"
+            className="hover:text-white transition"
           >
             RESUME
           </a>
+        </nav>
 
+        {/* Right Side */}
+        <div className="flex items-center gap-4">
+
+          {/* Contact Button */}
           <button
             onClick={() => {
-              setCurrentPage('inquiry');
+              setCurrentPage("inquiry");
               setIsMobileMenuOpen(false);
             }}
-            className="text-white"
+            className="hidden md:block bg-white text-black px-5 lg:px-8 py-2.5 lg:py-3 rounded-full text-[11px] lg:text-xs font-bold uppercase tracking-widest hover:scale-105 transition"
           >
             CONTACT
           </button>
+
+          {/* Mobile Hamburger */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden flex flex-col justify-center gap-1.5 w-8 h-8"
+          >
+            <span
+              className={`block h-[2px] w-6 bg-white transition-all duration-300 ${
+                isMobileMenuOpen
+                  ? "rotate-45 translate-y-[7px]"
+                  : ""
+              }`}
+            />
+
+            <span
+              className={`block h-[2px] w-6 bg-white transition-all duration-300 ${
+                isMobileMenuOpen
+                  ? "opacity-0"
+                  : ""
+              }`}
+            />
+
+            <span
+              className={`block h-[2px] w-6 bg-white transition-all duration-300 ${
+                isMobileMenuOpen
+                  ? "-rotate-45 -translate-y-[7px]"
+                  : ""
+              }`}
+            />
+          </button>
+
         </div>
-      )}
-    </>
+      </div>
+    </header>
   );
 };
 
