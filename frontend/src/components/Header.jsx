@@ -46,7 +46,7 @@ const Header = ({
           ))}
 
           <a
-            href="https://drive.google.com/file/d/19uK_1ZXT_LHe-eMfP7ayDLr0zA89N5ip/preview"
+            href="https://drive.google.com/file/d/1e_gDvbAY7uCqkJQl3ZCTPUwbjprxWdRp/view"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition"
